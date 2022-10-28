@@ -83,11 +83,18 @@ if($rowcount > 0){
 
     $res= mysqli_query($conn, $Delquery);
 
-    if($res){
-        echo "<script>alert('Data Deleted Successfully!'); window.location.href = 'ViewData.php';</script>";
+    if($Delid == ""){
+        echo "window.location.href = 'ViewData.php'";
     }
+
     else{
-        echo "<script>alert('Data Deletion Failed!')</script>";
+
+        if($res){
+            echo "<script>alert('Data Deleted Successfully!'); window.location.href = 'ViewData.php';</script>";
+        }
+        else{
+            echo "<script>alert('Data Deletion Failed!')</script>";
+        }
     }
 
 
